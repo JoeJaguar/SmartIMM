@@ -192,7 +192,7 @@ export default class DICTIONARY extends Component {
 
 const styles = StyleSheet.create({
   container : {flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff'},
-  head: { height: 40, backgroundColor: '#c7e0f4'},
+  head: { height: 40, backgroundColor: '#42e0d1'},
   body: {height: 50, backgroundColor: '#ffffff' },
-  text: {margin: 6},
+  text: {margin: 6, fontSize: 16, color: 'black'},
 });

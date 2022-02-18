@@ -1,70 +1,25 @@
-import * as React from 'react';
-import { Button, View, Text, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from "react";
+import { View, Button, Text,Image } from 'react-native';
 
-const Separator = () => (
-  <View style={styles.separator} />
-);
-
-function HomeScreen({ navigation }) {
+const Home = ({ navigation }) => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ fontSize: 30 }}> Welcome </Text>
-      <Separator />
-      <View style={[{ width: "90%", margin: 10 }]}>
-        <Button
-          title="CONVERSATION"
-          onPress={() => navigation.navigate('Conversation')}
-        />
+    <View style={{flex: 1, justifyContent: "center", alignItems: 'center',  backgroundColor: '#42e0d1'}}>
+      <Image 
+      source={require('./icon.png')}
+      style={{ width: 200, height: 200 }} />
+      <Text style={{ fontSize: 50, color: 'black' }}>Smart IMM</Text>
+      <Text style={{ fontSize: 20, color: 'black' }}>English Learning Application</Text>
+      <View style={[{ width: "90%", margin: 10 }]}> 
+        <Button onPress={() => navigation.navigate('Conversation')} color="#1035ac" title="Conversation"></Button>
       </View>
-      <Separator />
       <View style={[{ width: "90%", margin: 10 }]}>
-        <Button
-          title="DICTIONARY"
-          onPress={() => navigation.navigate('Dictionary')}
-        />
+        <Button onPress={() => navigation.navigate('Dictionary')} color="#1035ac" title="Dictionary"></Button>
+      </View>
+      <View style={[{ width: "90%", margin: 10 }]}>
+        <Button onPress={() => navigation.navigate('Listening')} color="#1035ac" title="Listening"></Button>
       </View>
     </View>
   );
-}
+};
 
-function ConversationScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>CONVERSATION</Text>
-    </View>
-  );
-}
-
-function DictionaryScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>DICTIONARY</Text>
-    </View>
-  );
-}
-
-const Stack = createNativeStackNavigator();
-
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Conversation" component={ConversationScreen} />
-        <Stack.Screen name="Dictionary" component={DictionaryScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-
-const styles = StyleSheet.create({
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: '#FFFFFF',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-});
-
-export default App;
+export default Home;

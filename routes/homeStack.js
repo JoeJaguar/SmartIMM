@@ -4,6 +4,7 @@ import { createStackNavigator} from '@react-navigation/stack';
 import Home from './component/Home';
 import Dictionary from './component/Dictionary';
 import Conversation from './component/Conversation';
+import Listening from './component/Listening';
 
 const homeStack = () => {
   const homeStack = createStackNavigator();
@@ -19,6 +20,9 @@ const homeStack = () => {
       <homeStack.Screen
         name ="Comversation"
         component= {Conversation}/>
+      <homeStack.Screen
+        name ="Listening"
+        component={Listening}/>
     </homeStack.Navigator>
   );
 };
